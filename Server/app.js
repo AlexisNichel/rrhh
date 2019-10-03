@@ -3,9 +3,11 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+var http = require('http');
+
 
 var app = express();
 
@@ -18,11 +20,31 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
+//New
+app.use('/uploads', express.static('./uploads/'));
+
+//Acceso Cross A las definiciones
+var allowCrossDomain = function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', "*");
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
+  next();
+}
+app.use(allowCrossDomain);
+
+var server = http.createServer(app);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
 });
 
+
+function startServer() {
+  app.angularServer = server.listen(1200, "localhost", function () {
+    console.log(`Servidor escuchando en 1200, en modo ${app.get('env')}`);
+  });
+}
+startServer();
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -34,5 +56,4 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.listen(9000);
 module.exports = app;
