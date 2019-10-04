@@ -7,7 +7,8 @@ var _ = require('lodash');
 var all = {
   env: process.env.NODE_ENV || 'development',
   root: path.normalize(`${__dirname}/../../..`),
-  port: process.env.PORT || 2002,
+  serverName: 'http://localhost:9000',
+  port: process.env.PORT || 9000,
   ip: process.env.IP || '0.0.0.0',
   secrets: {
     session: 'rrhh-sys-nichel-jaquie'
@@ -15,9 +16,9 @@ var all = {
   sequelize: {
     uri: process.env.POSTGRES_URL || 'postgres://postgres:postgres@localhost:5432/rrhh',
     options: {
-      dialect: 'postgres',  
+      dialect: 'postgres',
       define: {
-        timestamps: true, 
+        timestamps: true,
         freezeTableName: true
       }
     }

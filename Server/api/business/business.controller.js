@@ -1,7 +1,6 @@
 'use strict';
 var Sql = require('../../sqldb');
 
-
 module.exports.index = function (req, res) {
   return Sql.Business.findAll()
   .then(respondWithResult(res))

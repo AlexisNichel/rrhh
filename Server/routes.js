@@ -2,6 +2,7 @@
 /*Definicion de las rutas*/
 module.exports = function (app) {
   /*Colocar cada ruta*/
+  app.use('/upload', require('./api/upload'));
   app.use('/business', require('./api/business'));
   app.use('/user', require('./api/user'));
 
@@ -14,7 +15,8 @@ module.exports = function (app) {
     res.locals.message = err.message;
     res.locals.error = req.app.get('env') === 'development' ? err : {};
     res.status(err.status || 500);
-    res.render('404');
+    console.log(err.message);
+    res.render('500');
   });
   return app;
 };
