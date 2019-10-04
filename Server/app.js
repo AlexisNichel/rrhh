@@ -1,16 +1,18 @@
 'use strict';
 /*Importamos las librerías*/
-var express = require('express'); 
+var express = require('express');
 var http = require('http');
 /*Importamos las configuraciónes*/
-var expressConfig = require('./config/express'); 
-var enviromentConfig = require('./config/index'); 
+var expressConfig = require('./config/express');
+var enviromentConfig = require('./config/index');
 /*Importamos las rutas*/
-var registerRoutes = require('./routes'); 
+var registerRoutes = require('./routes');
+/*Importamos db*/
+var sqldb = require('./sqldb');
 /*Instanciamos express y aplicamos config y rutas*/
 var app = express();
-expressConfig.config(app);
-registerRoutes.routes(app);
+expressConfig(app);
+registerRoutes(app);
 /*Acceso Cross A las definiciones*/
 var allowCrossDomain = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
@@ -26,7 +28,11 @@ function startServer() {
     console.log(`Servidor escuchando en ${enviromentConfig.port}, en modo ${app.get('env')}`);
   });
 }
-/*Iniciar servicio*/
-startServer();
+/*Sincronizar DB e iniciar servicio*/
+sqldb.sequelize.sync()
+  .then(startServer())
+  .catch(err => {
+    console.log(`Error al conectar a DB: ${err}`);
+  });
 
 module.exports = app;
