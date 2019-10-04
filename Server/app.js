@@ -1,59 +1,32 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-
+'use strict';
+/*Importamos las librerías*/
+var express = require('express'); 
 var http = require('http');
-
-
+/*Importamos las configuraciónes*/
+var expressConfig = require('./config/express'); 
+var enviromentConfig = require('./config/index'); 
+/*Importamos las rutas*/
+var registerRoutes = require('./routes'); 
+/*Instanciamos express y aplicamos config y rutas*/
 var app = express();
-
-app.use(logger('dev'));
-app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-
-//New
-app.use('/uploads', express.static('./uploads/'));
-
-//Acceso Cross A las definiciones
+expressConfig.config(app);
+registerRoutes.routes(app);
+/*Acceso Cross A las definiciones*/
 var allowCrossDomain = function (req, res, next) {
   res.header('Access-Control-Allow-Origin', "*");
-  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
   res.header('Access-Control-Allow-Headers', 'Content-Type,Authorization');
   next();
 }
 app.use(allowCrossDomain);
-
+/*Crear server http*/
 var server = http.createServer(app);
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
-
-
 function startServer() {
-  app.angularServer = server.listen(1200, "localhost", function () {
-    console.log(`Servidor escuchando en 1200, en modo ${app.get('env')}`);
+  app.angularServer = server.listen(enviromentConfig.port, enviromentConfig.ip, function () {
+    console.log(`Servidor escuchando en ${enviromentConfig.port}, en modo ${app.get('env')}`);
   });
 }
+/*Iniciar servicio*/
 startServer();
-// error handler
-app.use(function(err, req, res, next) {
-  // set locals, only providing error in development
-  res.locals.message = err.message;
-  res.locals.error = req.app.get('env') === 'development' ? err : {};
-
-  // render the error page
-  res.status(err.status || 500);
-  res.render('error');
-});
 
 module.exports = app;
