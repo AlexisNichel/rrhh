@@ -6,34 +6,9 @@ class Login extends Component {
   render() {
     return (
       <div>
-        {/* Required meta tags */}
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <title>Vanilla - Bootstrap 4 Business Template</title>
-        {/* Bootstrap CSS */}
-        <link rel="stylesheet" type="text/css" href="assets/css/bootstrap.min.css" />
-        {/* Icon */}
-        <link rel="stylesheet" type="text/css" href="assets/fonts/line-icons.css" />
-        {/* Slicknav */}
-        <link rel="stylesheet" type="text/css" href="assets/css/slicknav.css" />
-        {/* Owl carousel */}
-        <link rel="stylesheet" type="text/css" href="assets/css/owl.carousel.min.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/owl.theme.css" />
-        {/* Slick Slider */}
-        <link rel="stylesheet" type="text/css" href="assets/css/slick.css" />
-        <link rel="stylesheet" type="text/css" href="assets/css/slick-theme.css" />
-        {/* Animate */}
-        <link rel="stylesheet" type="text/css" href="assets/css/animate.css" />
-        {/* Main Style */}
-        <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
-        {/* Responsive Style */}
-        <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
-        {/* Header Area wrapper Starts */}
         <header id="header-wrap">
-          {/* Navbar Start */}
           <nav className="navbar navbar-expand-lg fixed-top scrolling-navbar indigo">
             <div className="container">
-              {/* Brand and toggle get grouped for better mobile display */}
               <div className="navbar-header">
                 <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon" />
@@ -86,7 +61,6 @@ class Login extends Component {
                 </div>
               </div>
             </div>
-            {/* Mobile Menu Start */}
             <ul className="mobile-menu navbar-nav">
               <li>
                 <a className="page-scroll" href="#hero-area">
@@ -124,10 +98,7 @@ class Login extends Component {
                 </a>
               </li>
             </ul>
-            {/* Mobile Menu End */}
           </nav>
-          {/* Navbar End */}
-          {/* Hero Area Start */}
           <div id="hero-area" className="hero-area-bg">
             <div className="overlay" />
             <div className="container">
@@ -146,17 +117,13 @@ class Login extends Component {
               </div>
             </div>
           </div>
-          {/* Hero Area End */}
         </header>
-        {/* Header Area wrapper End */}
-        {/* Services Section Start */}
         <section id="services" className="section-padding">
           <div className="container">
             <div className="section-header text-center">
               <h2 className="section-title wow fadeInDown" data-wow-delay="0.3s">Our Services</h2>
             </div>
             <div className="row">
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="0.3s">
                   <div className="icon">
@@ -168,7 +135,6 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="0.6s">
                   <div className="icon">
@@ -180,7 +146,6 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="0.9s">
                   <div className="icon">
@@ -192,7 +157,6 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="1.2s">
                   <div className="icon">
@@ -204,7 +168,6 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="1.5s">
                   <div className="icon">
@@ -216,7 +179,6 @@ class Login extends Component {
                   </div>
                 </div>
               </div>
-              {/* Services item */}
               <div className="col-md-6 col-lg-4 col-xs-12">
                 <div className="services-item wow fadeInRight" data-wow-delay="1.8s">
                   <div className="icon">
@@ -231,8 +193,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Services Section End */}
-        {/* Feature Section Start */}
         <div id="feature">
           <div className="container-fluid">
             <div className="row">
@@ -313,8 +273,6 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        {/* Feature Section End */}
-        {/* Team Section Start */}
         <section id="team" className="section-padding text-center">
           <div className="container">
             <div className="row">
@@ -326,7 +284,6 @@ class Login extends Component {
             </div>
             <div className="row">
               <div className="col-sm-6 col-md-6 col-lg-4">
-                {/* Team Item Starts */}
                 <div className="team-item text-center">
                   <div className="team-img">
                     <img className="img-fluid" src="assets/img/team/team-01.jpg" alt="" />
@@ -345,10 +302,8 @@ class Login extends Component {
                     <p>Front-end Developer, Dropbox</p>
                   </div>
                 </div>
-                {/* Team Item Ends */}
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4">
-                {/* Team Item Starts */}
                 <div className="team-item text-center">
                   <div className="team-img">
                     <img className="img-fluid" src="assets/img/team/team-02.jpg" alt="" />
@@ -367,10 +322,8 @@ class Login extends Component {
                     <p>Product Designer, Tesla</p>
                   </div>
                 </div>
-                {/* Team Item Ends */}
               </div>
               <div className="col-sm-6 col-md-6 col-lg-4">
-                {/* Team Item Starts */}
                 <div className="team-item text-center">
                   <div className="team-img">
                     <img className="img-fluid" src="assets/img/team/team-03.jpg" alt="" />
@@ -389,13 +342,10 @@ class Login extends Component {
                     <p>Lead Designer, TNW</p>
                   </div>
                 </div>
-                {/* Team Item Ends */}
               </div>
             </div>
           </div>
         </section>
-        {/* Team Section End */}
-        {/* Clients Section Start */}
         <div id="clients" className="section-padding">
           <div className="container">
             <div className="section-header text-center">
@@ -425,8 +375,6 @@ class Login extends Component {
             </div>
           </div>
         </div>
-        {/* Clients Section End */}
-        {/* Testimonial Section Start */}
         <section id="testimonial" className="testimonial section-padding">
           <div className="container">
             <div className="row justify-content-center">
@@ -507,8 +455,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Testimonial Section End */}  
-        {/* Pricing section Start */} 
         <section id="pricing" className="section-padding">
           <div className="container">
             <div className="row">
@@ -566,8 +512,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Pricing Table Section End */}
-        {/* Owl Slider Section Start */}
         <section className="sloder-img section-padding">
           <div className="container">
             <div className="row">
@@ -596,8 +540,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Owl Slider Section End */}  
-        {/* Subscribe Section Start */}
         <section id="Subscribes" className="subscribes section-padding">
           <div className="container">
             <div className="row justify-content-md-center">
@@ -614,8 +556,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Subscribe Section End */}
-        {/* Contact Section Start */}
         <section id="contact" className="section-padding">    
           <div className="container wow fadeIn animated" style={{visibility: 'visible'}}>        
             <h2 className="section-title">You're Using Free Lite Version</h2>
@@ -634,8 +574,6 @@ class Login extends Component {
             </div>
           </div>
         </section>
-        {/* Contact Section End */}
-        {/* Footer Section Start */}
         <footer id="footer" className="footer-area section-padding">
           <div className="container">
             <div className="container">
@@ -675,7 +613,6 @@ class Login extends Component {
             </div>  
           </div>     
         </footer> 
-        {/* Footer Section End */}
         <section id="copyright">
           <div className="container">
             <div className="row">
@@ -685,16 +622,10 @@ class Login extends Component {
             </div>
           </div>
         </section>   
-        {/* Go to Top Link */}
         <a href="#" className="back-to-top">
           <i className="lni-arrow-up" />
         </a>
-        {/* Preloader */}
-        <div id="preloader">
-          <div className="loader" id="loader-1" />
-        </div>
-        {/* End Preloader */}
-        {/* jQuery first, then Popper.js, then Bootstrap JS */}
+       
       </div>
     );
   }
